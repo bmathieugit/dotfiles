@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/local/steward'
+let g:netrw_dirhist_6='/home/local/igdi/IGDI_Application/IGDI-CinkeProg/files/wsdl'
+let g:netrw_dirhist_5='/home/local/igdi/IGDI_Application/IGDI-CinkeProg/files'
+let g:netrw_dirhist_4='/home/local/igdi/IGDI_Application/IGDI-CinkeProg'
+let g:netrw_dirhist_3='/home/local/igdi/IGDI_Application'
+let g:netrw_dirhist_2='/home/local/igdi'
+let g:netrw_dirhist_1='/home/local/steward/src'

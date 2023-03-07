@@ -1,0 +1,44 @@
+call plug#begin()
+
+	Plug 'prabirshrestha/async.vim'
+	Plug 'prabirshrestha/vim-lsp'
+	Plug 'ajh17/vimcompletesme'
+  Plug 'preservim/nerdtree'
+  Plug 'townk/vim-autoclose'
+
+call plug#end()
+
+if executable('clangd')
+	augroup lsp_clangd
+		autocmd!
+		autocmd User lsp_setup call lsp#register_server({
+			\ 'name': 'clangd',
+			\ 'cmd': {server_info->['clangd']},
+			\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+			\ })
+		autocmd FileType c setlocal omnifunc=lsp#complete
+		autocmd FileType cpp setlocal omnifunc=lsp#complete
+		autocmd FileType objc setlocal omnifunc=lsp#complete
+    autocmd FileType objcpp setlocal omnifunc=lsp#complete
+  augroup end
+endif
+
+" autocmd VimEnter * NERDTree
+" autocmd TextChanged,TextChangedI <buffer> silent write
+
+set t_Co=256
+
+set number
+set smartindent
+set autoindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set showcmd
+
+colorscheme nord
+
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
+endif
